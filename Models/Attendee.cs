@@ -10,6 +10,7 @@
         public string Country { get; set; } = "";
         public string PostalCode { get; set; } = "";
         public Badge? Badge { get; set; }
+        public ICollection<Registration> Registrations { get; set; } = new HashSet<Registration>();
 
     }
 }

@@ -14,6 +14,7 @@
         public ICollection<Event> Events { get; set; } = new HashSet<Event>();
         public Event? ParentEvent { get; set; }
         public int ParentEventId { get; set; }
+        public ICollection<Registration> Registrations { get; set; } = new HashSet<Registration>();
 
     }
 }
