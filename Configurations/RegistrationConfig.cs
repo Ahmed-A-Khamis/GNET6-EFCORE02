@@ -15,6 +15,7 @@ namespace GNET6_EFCORE02.Configurations
             });
             Registrations.HasOne(r => r.Event).WithMany(e => e.Registrations).HasForeignKey(r => r.EventId);
             Registrations.HasOne(r => r.Attendee).WithMany(e => e.Registrations).HasForeignKey(r => r.UserId);
+            Registrations.Property<DateTime>("CompletedAt").HasDefaultValueSql("GetDate()");
         }
     }
 }

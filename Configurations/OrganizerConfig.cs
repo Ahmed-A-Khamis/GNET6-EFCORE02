@@ -10,6 +10,7 @@ namespace GNET6_EFCORE02.Configurations
         {
             Organizers.HasKey(o => o.OrganizerId);
             Organizers.HasMany<Event>(o => o.Events).WithOne(e => e.Organizer).HasForeignKey(e => e.OrganizerId).OnDelete(DeleteBehavior.Cascade);
+            Organizers.HasOne<OrganizerProfile>(o => o.OrganizerProfile).WithOne(op => op.Organizer);
         }
     }
 }
